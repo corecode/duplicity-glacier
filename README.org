@@ -20,6 +20,11 @@ Invoke =glacierize=, which will implement Method 1 for you, e.g.
 sudo /path/to/duplicity-glacier/glacierize duply home status
 #+END_SRC
 
+* Migrating existing s3 archives
+
+For your convenience: =s3-rename.rb= (requires =s3-cmd=).  Will rename
+data archives so that they are prefixed with =data-=.
+
 * License
 
 Copyright (c) 2013 Simon Schubert <2@0x2c.org>
