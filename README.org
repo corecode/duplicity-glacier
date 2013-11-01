@@ -22,7 +22,7 @@ sudo /path/to/duplicity-glacier/glacierize duply home status
 
 * Migrating existing s3 archives
 
-For your convenience: =s3-rename.rb= (requires =s3-cmd=).  Will rename
+For your convenience: =s3-rename.rb= (requires =s3cmd=).  Will rename
 data archives so that they are prefixed with =data-=.
 
 * License
