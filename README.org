@@ -1,0 +1,29 @@
+Make duplicity use filenames that are easy to migrate to glacier.
+
+The filenames for data archives are prefixed with =data-=,
+e.g. =data-duplicity-full.20131101T150444Z.vol1.difftar.gpg= instead
+of =duplicity-full.20131101T150444Z.vol1.difftar.gpg=.
+
+This allows you to write an amazon glacier migration expression for
+data files only.
+
+* Usage
+
+** Method 1: PATH
+Set =$PATH= to this directory.
+
+** Method 2: glacierize
+
+Invoke =glacierize=, which will implement Method 1 for you, e.g.
+
+#+BEGIN_SRC sh
+sudo /path/to/duplicity-glacier/glacierize duply home status
+#+END_SRC
+
+* License
+
+Copyright (c) 2013 Simon Schubert <2@0x2c.org>
+
+This tool is licensed under the GNU General Public License, either
+version 3 of the License, or (at your option) any later version.  You
+can find a copy of this license in [[file:COPYING]].

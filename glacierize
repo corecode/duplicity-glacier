@@ -1,0 +1,7 @@
+#!/bin/sh
+
+me=$(realpath "$0")
+mydir=$(dirname "$me")
+PATH=$mydir:$PATH
+
+exec "$@"

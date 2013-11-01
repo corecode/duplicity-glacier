@@ -1,0 +1,17 @@
+#!/bin/sh
+
+me=$(realpath "$0")
+mydir=$(dirname "$me")
+export PYTHONPATH="$mydir/python${PYTHONPATH+:}${PYTHONPATH}"
+
+all_duplicity=$(which -a duplicity)
+next_duplicity=$(echo "$all_duplicity"|xargs realpath|awk '$0 != me { print $0; exit; }' me="$me")
+
+# echo "args: $@" >> /tmp/d
+# echo "me: ${me}" >> /tmp/d
+# echo "mydir: ${mydir}" >> /tmp/d
+# echo "PYTHONPATH: ${PYTHONPATH}" >> /tmp/d
+# echo "all_duplicity: ${all_duplicity}" >> /tmp/d
+# echo "next_duplicity: ${next_duplicity}" >> /tmp/d
+
+exec "$next_duplicity" "$@"
